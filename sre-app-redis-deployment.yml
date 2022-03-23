@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sre-app-redis-deployment
+  namespace: sre-app-namespace
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: sre-app-redis
+  template:
+    metadata:
+      labels:
+        app: sre-app-redis
+    spec:
+      containers:
+        - name: sre-app-redis-containers
+          image: redis:alpine
+          ports:
+            - name: redis-port
+              containerPort: 6379

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: sre-app-flask
+  name: sre-app-flask-service
+  namespace: sre-app-namespace
+spec:
+  ports:
+    - name: flask-app-port
+      port: 5000
+      targetPort: 5000
+      protocol: TCP
+      nodePort: 30164
+  selector:
+    app: sre-app-flask
+  type: LoadBalancer
