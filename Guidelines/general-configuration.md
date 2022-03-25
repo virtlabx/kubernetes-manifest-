@@ -1,0 +1,23 @@
+### Here I mention the general installation and configuration that I did manually as you will not be able to see its code!
+
+- Install a fresh k8s locally to control the EKS cluster with kubectl utility.
+- Install awscliv2.
+- Update the default kubeconfig file to use the EKS cluster as the current context.
+- Add your user "k8s-user" as another admin users by updating configmap/aws-auth.
+- Install helm.
+- Install and configure Jenkins service.
+- Create your user bloomreach-jenkins-user in Jenkins and grant it access to the pipeline.
+- Configure built-in node in Jenkins to make it ready to run pipelines.
+- Create Jenkins job.
+- Install AWS Credentials plugin on Jenkins.
+- Added awsDeploymentUserCredentialsId in Jenkins credentials to securely srore the AWS AK and SK.
+- Registered Route53 domain to use it in Jenkins and Vault URL.
+- Created the hosted zone and the records in AWS Route53 manually.
+- Install, configure and unseal Vault server.
+- Enabled userpass auth method in Vault.
+- Create your user bloomreach-vault-user user in Vault.
+- Create admins policy and attached it to bloomreach-vault-user.
+- Create read only policy to be used in K8S integration.
+- Create kv secret engine and added the sensitive data in it.
+- Enabled Kubernetes auth method in Vault with the configuration reference from the AWS EKS cluster.
+- Added the read only role to the Kubernetes auth method.
