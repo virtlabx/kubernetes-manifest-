@@ -9,4 +9,4 @@ I created the following k8s objects:
 - Deployment "sre-app-redis-deployment" for redis.
 - Service "sre-app-flask-service" which is a LoadBalancer for sre-app-flask-deployment.
 - Service "sre-app-redis-service" which is a ClusterIP for sre-app-redis-deployment internal communication.
-- 
+-
