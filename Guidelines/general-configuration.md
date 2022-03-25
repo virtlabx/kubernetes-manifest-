@@ -4,7 +4,7 @@
 - Install awscliv2.
 - Update the default kubeconfig file to use the EKS cluster as the current context.
 - Add your user "k8s-user" as another admin users by updating configmap/aws-auth.
-- Install helm.
+- Install helm and eksctl.
 - Install and configure Jenkins service.
 - Create your user bloomreach-jenkins-user in Jenkins and grant it access to the pipeline.
 - Configure built-in node in Jenkins to make it ready to run pipelines.

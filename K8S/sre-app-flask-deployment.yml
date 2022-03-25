@@ -13,7 +13,6 @@ spec:
       labels:
         app: sre-app-flask
     spec:
-      serviceAccountName: internal-app
       containers:
         - name: sre-app-flask-containers
           image: 422434854706.dkr.ecr.eu-west-1.amazonaws.com/bloomreach-simple-app:latest
@@ -25,6 +24,13 @@ spec:
               value: "sre-app-redis-service"
             - name: REDIS_PORT
               value: "6379"
+            # TODO
+            # Sensitive data hardcoding is temporary at this moment.
+            # I am working on external vault integration with EKS cluster, but it's not working yet.
+            # It should be ready on Monday interview.
+            # The external vault:
+            # https://www.jenkins-vault-bloomreach.com:8200/ui
+            # I will use vault agent injector to achieve that.
             - name: USERNAME
               value: "bob"
             - name: PASSWORD
