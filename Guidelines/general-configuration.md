@@ -13,6 +13,8 @@
 - Added awsDeploymentUserCredentialsId in Jenkins credentials to securely srore the AWS AK and SK.
 - Registered Route53 domain to use it in Jenkins and Vault URL.
 - Created the hosted zone and the records in AWS Route53 manually.
+- Migrated the classic load balancer that was automatically provisioned using sre-app-flask-svc to a network load balancer. The reason for that as I wanted to use the ssl certificate that I created in ACM service in the load balancer listener in front of the flask web app to be secure instead of using http. That is not easy with classic load balancer and the AWS support on the classic load balancer will end this year. Using the classic load balancer is not recommended anyway.
+- Added ingress rule in the EKS security group to allow port 30164 as it is used in the health check of the load balancer and the target group. This port was not opened in the EKS module that I used to provision the EKS cluster. The registration of the targets was failing so I had to open it for the health check to become healthy.
 - Install, configure and unseal Vault server.
 - Enabled userpass auth method in Vault.
 - Create your user bloomreach-vault-user user in Vault.
