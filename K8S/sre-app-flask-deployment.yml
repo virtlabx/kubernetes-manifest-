@@ -31,6 +31,7 @@ spec:
             # The external vault:
             # https://www.jenkins-vault-bloomreach.com:8200/ui
             # I will use vault agent injector to achieve that.
+            # https://learn.hashicorp.com/tutorials/vault/kubernetes-external-vault?in=vault/kubernetes
             - name: USERNAME
               value: "bob"
             - name: PASSWORD
